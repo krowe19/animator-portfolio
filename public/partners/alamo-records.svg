@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 280 100" fill="none" role="img" aria-label="Alamo Records">
+  <text
+    x="140"
+    y="42"
+    text-anchor="middle"
+    fill="#111111"
+    font-family="Georgia, 'Times New Roman', serif"
+    font-size="48"
+    font-weight="700"
+    letter-spacing="0.1em"
+  >ALAMO</text>
+  <text
+    x="140"
+    y="86"
+    text-anchor="middle"
+    fill="#111111"
+    font-family="Georgia, 'Times New Roman', serif"
+    font-size="32"
+    font-weight="700"
+    letter-spacing="0.24em"
+  >RECORDS</text>
+</svg>

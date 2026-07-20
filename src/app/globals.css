@@ -6,6 +6,8 @@
   --muted: #5c5c5c;
   --border: #dcdcd8;
   --accent: #ff4d1a;
+  --accent-fg: #ffffff;
+  --accent-soft: #fff1ec;
   --hero-bg: #ffffff;
   --hero-fg: #0c0c0c;
   --hero-muted: rgba(12, 12, 12, 0.58);
@@ -17,6 +19,8 @@
   --color-muted: var(--muted);
   --color-border: var(--border);
   --color-accent: var(--accent);
+  --color-accent-fg: var(--accent-fg);
+  --color-accent-soft: var(--accent-soft);
   --color-hero-bg: var(--hero-bg);
   --color-hero-fg: var(--hero-fg);
   --color-hero-muted: var(--hero-muted);
@@ -70,7 +74,7 @@ body {
   font-family: var(--font-syne), system-ui, sans-serif;
 }
 
-/* Hero orientation — landscape (≥1:1) vs portrait (<1:1) */
+/* Hero orientation: landscape (≥1:1) vs portrait (<1:1) */
 .hero-shell {
   display: grid;
   min-height: 100dvh;

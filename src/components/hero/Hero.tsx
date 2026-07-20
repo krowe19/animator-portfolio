@@ -2,13 +2,12 @@
 
 import { motion } from "framer-motion";
 import Link from "next/link";
-import { CountUp } from "@/components/hero/CountUp";
 import { HeroMedia } from "@/components/hero/HeroMedia";
 import { useHeroOrientation } from "@/components/hero/useHeroOrientation";
 import { useReducedMotion } from "@/components/motion/MotionProvider";
 import { WorkWithMeButton } from "@/components/ui/WorkWithMeButton";
 import { site } from "@/content/site";
-import { tiktokProfile } from "@/content/tiktok";
+import { formatCompactCount, tiktokProfile } from "@/content/tiktok";
 import { cn } from "@/lib/utils";
 
 export function Hero() {
@@ -84,14 +83,14 @@ export function Hero() {
               <WorkWithMeButton
                 className={cn(
                   "inline-flex items-center justify-center bg-accent px-7 py-3.5",
-                  "text-sm font-medium text-white transition-opacity hover:opacity-90",
+                  "text-sm font-medium text-accent-fg transition-opacity hover:opacity-90",
                 )}
               />
               <Link
                 href={site.secondaryCta.href}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-sm font-medium text-hero-fg underline decoration-hero-muted/40 underline-offset-4 transition-colors hover:decoration-hero-fg"
+                className="text-base font-medium text-hero-fg underline decoration-hero-muted/40 underline-offset-4 transition-colors hover:decoration-hero-fg"
               >
                 {site.secondaryCta.label}
               </Link>
@@ -103,24 +102,25 @@ export function Hero() {
             animate={{ opacity: 1, y: 0 }}
             transition={enter(0.42)}
             className={cn(
-              "mt-12 w-full border-t border-foreground/12 pt-10 md:mt-14",
+              "@container mt-12 w-full border-t border-foreground/12 pt-10 md:mt-14",
               orientation === "landscape" ? "max-w-none" : "mx-auto max-w-xl",
             )}
           >
-            <dl className="grid grid-cols-2 gap-x-8 gap-y-8 sm:grid-cols-4 sm:gap-x-8 lg:gap-x-10">
+            <dl className="grid grid-cols-2 gap-x-6 gap-y-8 @[30rem]:grid-cols-4 @[30rem]:gap-x-5">
               {tiktokProfile.heroStats.map((stat) => (
                 <div key={stat.key} className="min-w-0">
-                  <dt className="text-[0.7rem] font-medium uppercase tracking-[0.16em] text-hero-muted sm:text-xs">
+                  <dt className="text-[0.65rem] font-medium uppercase leading-snug tracking-[0.14em] text-hero-muted @[30rem]:text-xs @[30rem]:tracking-[0.16em]">
                     {stat.label}
                   </dt>
-                  <dd className="font-display mt-2 text-3xl font-bold tracking-tight text-hero-fg tabular-nums sm:text-4xl">
-                    <CountUp value={stat.value} suffix={stat.suffix} />
+                  <dd className="font-display mt-2 text-3xl font-bold tracking-tight whitespace-nowrap text-hero-fg tabular-nums @[30rem]:text-4xl @[40rem]:text-5xl">
+                    {formatCompactCount(stat.value)}
+                    {stat.suffix}
                   </dd>
                 </div>
               ))}
             </dl>
             <p className="mt-8 text-sm text-hero-muted">
-              Selected collabs — {partners}
+              Selected collabs: {partners}
             </p>
           </motion.div>
         </div>

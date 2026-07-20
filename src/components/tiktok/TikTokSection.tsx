@@ -5,20 +5,14 @@ import { WorkWithMeButton } from "@/components/ui/WorkWithMeButton";
 import { formatCompactCount, tiktokProfile } from "@/content/tiktok";
 
 export function TikTokSection() {
-  const { stats, topVideos, story } = tiktokProfile;
+  const { stats, topVideos } = tiktokProfile;
 
   return (
-    <div className="space-y-14 md:space-y-16">
+    <div className="space-y-10 md:space-y-12">
       <FadeIn delay={0.05}>
-        <div className="flex flex-col gap-8 lg:flex-row lg:items-end lg:justify-between">
-          <div>
-            <p className="text-sm text-muted">@{tiktokProfile.username}</p>
-            <p className="font-display mt-1 text-3xl font-semibold tracking-tight md:text-4xl">
-              {tiktokProfile.displayName}
-            </p>
-            <p className="mt-4 max-w-xl text-muted">{tiktokProfile.bio}</p>
-          </div>
-          <div className="flex flex-wrap items-start gap-3">
+        <div className="flex flex-col gap-6 sm:flex-row sm:items-center sm:justify-between">
+          <p className="text-sm text-muted">@{tiktokProfile.username}</p>
+          <div className="flex flex-wrap items-center gap-3">
             <WorkWithMeButton
               feedbackAlign="end"
               className="inline-flex items-center justify-center bg-foreground px-6 py-3 text-sm font-medium text-background transition-opacity hover:opacity-85"
@@ -32,16 +26,6 @@ export function TikTokSection() {
               Follow on TikTok
             </Link>
           </div>
-        </div>
-      </FadeIn>
-
-      <FadeIn delay={0.08}>
-        <div className="max-w-3xl space-y-4 border-l-2 border-accent pl-6 md:pl-8">
-          {story.map((paragraph) => (
-            <p key={paragraph.slice(0, 40)} className="leading-relaxed text-muted">
-              {paragraph}
-            </p>
-          ))}
         </div>
       </FadeIn>
 

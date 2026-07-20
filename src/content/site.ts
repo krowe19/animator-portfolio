@@ -13,7 +13,7 @@ export const site = {
   brand: "gru vlogs",
   title: "3D Animator",
   tagline:
-    "Short-form 3D character comedy that brands hire — 1.8M followers, 257M+ views, and work with Sony, Atlantic, and Block Blast.",
+    "Short-form 3D character comedy that brands hire. 1.8M followers, 257M+ views, and work with Sony Music, Atlantic, and Block Blast.",
   nav: [
     { label: "Work", href: "#work" },
     { label: "TikTok", href: "#tiktok" },
@@ -26,7 +26,7 @@ export const site = {
   ] satisfies SocialLink[],
   cta: {
     label: "Work With Me",
-    href: "mailto:gruvlogs@proton.me?subject=Brand%20Partnership%20%E2%80%94%20gru%20vlogs",
+    href: "mailto:gruvlogs@proton.me?subject=Brand%20Partnership%3A%20gru%20vlogs",
   },
   secondaryCta: {
     label: "Watch on TikTok",

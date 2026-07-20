@@ -16,7 +16,7 @@ const syne = Syne({
 });
 
 export const metadata: Metadata = {
-  title: `${site.brand} — ${site.name}`,
+  title: `${site.brand} · ${site.name}`,
   description: site.tagline,
 };
 

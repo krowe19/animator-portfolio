@@ -10,6 +10,9 @@ export type TikTokVideo = {
 export type BrandPartnership = {
   name: string;
   category: string;
+  logoUrl: string;
+  /** Optional size tweak when a logo’s visual weight differs from the others */
+  logoClassName?: string;
 };
 
 export const tiktokProfile = {
@@ -19,16 +22,28 @@ export const tiktokProfile = {
   bio: "Where are the gorls?",
   businessEmail: "gruvlogs@proton.me",
   linktree: "https://linktr.ee/grugaming69",
-  brandInquirySubject: "Brand Partnership — gru vlogs",
+  brandInquirySubject: "Brand Partnership: gru vlogs",
   story: [
-    "gru vlogs puts Gru into everyday memes and moments people actually share — short 3D clips built for TikTok: fast, absurd, instantly readable, and made to loop.",
-    "Scale followed. Labels and brands came for promotional work that still felt native to the feed — not a bolted-on ad.",
+    "gru vlogs puts Gru into familiar meme formats and everyday moments through short 3D clips made for TikTok. Each piece is clear at a glance and built to hold up on repeat.",
+    "As the channel grew, labels and brands commissioned promotional work that still felt native to the feed.",
   ],
   partnershipsHeading: "Selected Collaborations",
   partnerships: [
-    { name: "Sony Records", category: "Record Label" },
-    { name: "Atlantic Records", category: "Record Label" },
-    { name: "Block Blast", category: "Mobile Game" },
+    {
+      name: "Alamo Records",
+      category: "Sony Music",
+      logoUrl: "/partners/alamo-records.svg",
+    },
+    {
+      name: "Atlantic Records",
+      category: "Record Label",
+      logoUrl: "/partners/atlantic-records.svg",
+    },
+    {
+      name: "Block Blast",
+      category: "Mobile Game",
+      logoUrl: "/partners/block-blast.svg",
+    },
   ] satisfies BrandPartnership[],
   /** Stats pulled from @grugaming69 on 29 Jun 2025 */
   stats: {
@@ -39,7 +54,7 @@ export const tiktokProfile = {
     totalViews: 257_000_000,
     avgViewsPerVideo: 7_100_000,
   },
-  /** Hero proof strip — views lead; full set lives in stats above */
+  /** Hero proof strip: views lead; full set lives in stats above */
   heroStats: [
     {
       key: "views",

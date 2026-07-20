@@ -8,7 +8,7 @@ export type Project = {
 };
 
 /**
- * Add or edit projects here — no component changes needed.
+ * Add or edit projects here; no component changes needed.
  * posterUrl / videoUrl: external CDN links (must support CORS for in-browser playback).
  */
 export const projects: Project[] = [

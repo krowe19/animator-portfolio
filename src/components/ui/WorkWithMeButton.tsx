@@ -49,7 +49,7 @@ export function WorkWithMeButton({
       try {
         await navigator.clipboard.writeText(email);
       } catch {
-        // Clipboard can fail in insecure contexts — mailto still proceeds.
+        // Clipboard can fail in insecure contexts; mailto still proceeds.
       }
 
       setCopied(true);

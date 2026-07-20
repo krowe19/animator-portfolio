@@ -1,6 +1,7 @@
 import type { NextConfig } from "next";
 
-const basePath = "/gru";
+// Production deploys under /gru; local `next dev` serves at /
+const basePath = process.env.NODE_ENV === "production" ? "/gru" : "";
 
 const nextConfig: NextConfig = {
   basePath,
@@ -20,7 +21,7 @@ const nextConfig: NextConfig = {
     ],
   },
   // No apex redirect: kanerowe.net/ will later be the main site.
-  // This app only owns /gru via basePath.
+  // This app only owns /gru via basePath in production.
 };
 
 export default nextConfig;

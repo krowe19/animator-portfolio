@@ -59,9 +59,24 @@ export function BrandPartnerships() {
           {tiktokProfile.partnerships.map((partner) => (
             <li
               key={partner.name}
-              className="flex flex-col justify-center bg-background px-6 py-8 text-center"
+              className="flex flex-col items-center justify-center bg-background px-6 py-8 text-center"
             >
-              <p className="text-lg font-medium tracking-tight md:text-xl">
+              <div className="flex h-12 w-full max-w-[9rem] items-center justify-center">
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img
+                  src={partner.logoUrl}
+                  alt=""
+                  className={cn(
+                    "h-full w-auto max-w-full object-contain",
+                    partner.logoClassName,
+                  )}
+                />
+              </div>
+              <div
+                className="mx-auto mt-6 h-px w-8 bg-border"
+                aria-hidden="true"
+              />
+              <p className="mt-5 text-lg font-medium tracking-tight md:text-xl">
                 {partner.name}
               </p>
               <p className="mt-2 font-mono text-xs uppercase tracking-wider text-muted">

@@ -33,10 +33,10 @@ export function TikTokVideoCard({ video, rank, index }: TikTokVideoCardProps) {
           "group relative block overflow-hidden rounded-sm border border-border bg-background",
           "focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-foreground",
         )}
-        aria-label={`#${rank} most viewed video — ${video.views} views on TikTok`}
+        aria-label={`#${rank} most viewed video, ${video.views} views on TikTok`}
       >
         <div className="relative aspect-[9/16] overflow-hidden bg-border">
-          {/* Local posters in /public/tiktok — avoids expired TikTok CDN signatures */}
+          {/* Local posters in /public/tiktok; avoids expired TikTok CDN signatures */}
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img
             src={withBasePath(video.posterUrl)}
