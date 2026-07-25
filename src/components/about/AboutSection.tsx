@@ -17,7 +17,7 @@ export function AboutSection() {
       </div>
 
       <div>
-        <FadeIn delay={0.1}>
+        <FadeIn>
           <div>
             <h3 className="text-xs font-medium uppercase tracking-[0.16em] text-muted">
               {about.skillsHeading}

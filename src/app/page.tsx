@@ -8,7 +8,6 @@ import { Section } from "@/components/layout/Section";
 import { TikTokSection } from "@/components/tiktok/TikTokSection";
 import { about } from "@/content/about";
 import { contact } from "@/content/contact";
-import { tiktokProfile } from "@/content/tiktok";
 
 export default function Home() {
   return (
@@ -23,21 +22,7 @@ export default function Home() {
         >
           <CollaborationsSection />
         </Section>
-        <Section
-          id="tiktok"
-          heading="gru vlogs"
-          headingId="tiktok-heading"
-          headingClassName="text-4xl md:text-6xl"
-          headerClassName="mb-6 md:mb-8"
-          intro={
-            <>
-              <div>The character world behind the numbers.</div>
-              <div>{tiktokProfile.bio}</div>
-            </>
-          }
-        >
-          <TikTokSection />
-        </Section>
+        <TikTokSection />
         <Section
           id="about"
           heading={about.heading}

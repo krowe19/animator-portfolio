@@ -15,10 +15,9 @@ export function Hero() {
   const orientation = useHeroOrientation();
   const partners = tiktokProfile.partnerships.map((p) => p.name).join(" · ");
 
-  const enter = (delay: number) =>
-    reducedMotion
-      ? { duration: 0 }
-      : { duration: 0.7, delay, ease: [0.22, 1, 0.36, 1] as const };
+  const settle = reducedMotion
+    ? { duration: 0 }
+    : { duration: 0.4, ease: [0.25, 0.1, 0.25, 1] as const };
 
   return (
     <section
@@ -38,7 +37,10 @@ export function Hero() {
         </div>
 
         <div className="hero-copy-slot px-6">
-          <div
+          <motion.div
+            initial={reducedMotion ? false : { opacity: 0, y: 10 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={settle}
             className={cn(
               "w-full",
               orientation === "landscape"
@@ -46,40 +48,31 @@ export function Hero() {
                 : "mx-auto max-w-xl",
             )}
           >
-            <motion.p
-              initial={reducedMotion ? false : { opacity: 0, y: 16 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={enter(0.05)}
-              className="text-sm text-hero-muted md:text-base"
-            >
+            <p className="text-sm text-hero-muted md:text-base">
               {site.name} · {site.title}
-            </motion.p>
+            </p>
 
-            <motion.h1
+            <h1
               id="hero-heading"
-              initial={reducedMotion ? false : { opacity: 0, y: 28 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={enter(0.12)}
               className="font-display mt-3 max-w-[11ch] text-[clamp(3rem,8.5vw,6.5rem)] font-extrabold leading-[0.9] tracking-[-0.05em] text-hero-fg"
             >
               {site.brand}
-            </motion.h1>
+            </h1>
 
-            <motion.p
-              initial={reducedMotion ? false : { opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={enter(0.22)}
-              className="mt-5 max-w-md text-base leading-relaxed text-hero-muted md:mt-6 md:text-lg"
+            <p
+              className={cn(
+                "max-w-md text-base leading-relaxed text-hero-muted md:text-lg",
+                orientation === "portrait" ? "mt-4" : "mt-5 md:mt-6",
+              )}
             >
-              {site.tagline}
-            </motion.p>
+              {site.tagline.map((line) => (
+                <span key={line} className="block">
+                  {line}
+                </span>
+              ))}
+            </p>
 
-            <motion.div
-              initial={reducedMotion ? false : { opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={enter(0.32)}
-              className="mt-8 flex flex-wrap items-center gap-x-8 gap-y-4 md:mt-10"
-            >
+            <div className="mt-8 flex flex-wrap items-center gap-x-8 gap-y-4 md:mt-10">
               <WorkWithMeButton
                 className={cn(
                   "inline-flex items-center justify-center bg-accent px-7 py-3.5",
@@ -94,13 +87,17 @@ export function Hero() {
               >
                 {site.secondaryCta.label}
               </Link>
-            </motion.div>
-          </div>
+            </div>
+          </motion.div>
 
           <motion.div
-            initial={reducedMotion ? false : { opacity: 0, y: 24 }}
+            initial={reducedMotion ? false : { opacity: 0, y: 8 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={enter(0.42)}
+            transition={
+              reducedMotion
+                ? { duration: 0 }
+                : { ...settle, delay: 0.06 }
+            }
             className={cn(
               "@container mt-12 w-full border-t border-foreground/12 pt-10 md:mt-14",
               orientation === "landscape" ? "max-w-none" : "mx-auto max-w-xl",

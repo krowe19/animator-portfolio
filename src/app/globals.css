@@ -33,6 +33,16 @@ html {
   scroll-behavior: smooth;
 }
 
+/* Lenis owns wheel smoothing; keep native anchor CSS as fallback */
+html.lenis,
+html.lenis body {
+  height: auto;
+}
+
+html.lenis {
+  scroll-behavior: auto;
+}
+
 @media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto;
@@ -74,6 +84,38 @@ body {
   font-family: var(--font-syne), system-ui, sans-serif;
 }
 
+/* Collaboration cards — brushed panel + interactive spotlight */
+.partner-card {
+  --shine-x: 50%;
+  --shine-y: 38%;
+  background-color: #ececec;
+  background-image:
+    radial-gradient(
+      560px circle at var(--shine-x) var(--shine-y),
+      rgba(255, 255, 255, 0.72),
+      rgba(255, 255, 255, 0.18) 34%,
+      transparent 52%
+    ),
+    linear-gradient(
+      145deg,
+      rgba(255, 255, 255, 0.82) 0%,
+      rgba(255, 255, 255, 0.22) 38%,
+      rgba(255, 255, 255, 0) 58%
+    );
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.95);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .partner-card {
+    background-image: linear-gradient(
+      145deg,
+      rgba(255, 255, 255, 0.75) 0%,
+      rgba(255, 255, 255, 0.18) 46%,
+      rgba(255, 255, 255, 0) 70%
+    );
+  }
+}
+
 /* Hero orientation: landscape (≥1:1) vs portrait (<1:1) */
 .hero-shell {
   display: grid;
@@ -96,16 +138,23 @@ body {
 @media (min-aspect-ratio: 1/1) {
   .hero-shell {
     grid-template-columns: minmax(0, 0.95fr) minmax(0, 1.15fr);
+    height: 100dvh;
+    min-height: 100dvh;
+    overflow: hidden;
   }
 
   .hero-media-slot {
     order: 2;
-    min-height: 100dvh;
+    min-height: 0;
+    height: 100%;
+    overflow: hidden;
   }
 
   .hero-copy-slot {
     order: 1;
+    min-height: 0;
     padding: 6rem 2rem 6rem 3rem;
+    overflow: auto;
   }
 
   .hero-media-frame {
@@ -126,18 +175,25 @@ body {
   .hero-media-slot {
     order: 1;
     width: 100%;
-    height: min(52vh, 520px);
-    min-height: 300px;
+    height: min(48vh, 480px);
+    min-height: 280px;
   }
 
   .hero-copy-slot {
     order: 2;
-    padding: 1.5rem 1.5rem 4rem;
+    /* Sit copy tight under the media fade — don't float it mid-column */
+    justify-content: flex-start;
+    padding: 0.25rem 1.5rem 3.5rem;
   }
 
   .hero-media-frame {
     position: absolute;
     inset: 0;
+  }
+
+  /* Soften the media→copy handoff so the fade reads as intentional */
+  .hero-portrait-fade {
+    height: 4.5rem;
   }
 }
 

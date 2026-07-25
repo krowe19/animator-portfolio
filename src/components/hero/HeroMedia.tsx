@@ -15,6 +15,9 @@ export function HeroMedia({ mode, className }: HeroMediaProps) {
         fill
         priority
         fetchPriority="high"
+        // Serve the static PNG directly — Next's optimizer can return
+        // Content-Disposition: attachment, which Safari refuses to show inline.
+        unoptimized
         sizes={
           mode === "landscape"
             ? "(min-aspect-ratio: 1/1) 55vw, 100vw"
@@ -22,9 +25,7 @@ export function HeroMedia({ mode, className }: HeroMediaProps) {
         }
         className={cn(
           "select-none object-contain",
-          mode === "landscape"
-            ? "object-right-bottom"
-            : "object-bottom",
+          mode === "landscape" ? "object-right-bottom" : "object-bottom",
         )}
       />
     </div>

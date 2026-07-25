@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { FadeIn } from "@/components/motion/FadeIn";
+import { MailtoCopyLink } from "@/components/ui/MailtoCopyLink";
 import { WorkWithMeButton } from "@/components/ui/WorkWithMeButton";
 import { contact } from "@/content/contact";
 import { site } from "@/content/site";
@@ -8,6 +9,7 @@ import { cn } from "@/lib/utils";
 
 export function ContactSection() {
   const channels = site.socials.filter((social) => social.label !== "Email");
+  const mailtoHref = `mailto:${tiktokProfile.businessEmail}?subject=${encodeURIComponent(tiktokProfile.brandInquirySubject)}`;
 
   return (
     <div className="overflow-hidden border border-border bg-background">
@@ -22,17 +24,18 @@ export function ContactSection() {
               <p className="text-xs font-medium uppercase tracking-[0.16em] text-muted">
                 {contact.emailLabel}
               </p>
-              <a
-                href={`mailto:${tiktokProfile.businessEmail}?subject=${encodeURIComponent(tiktokProfile.brandInquirySubject)}`}
-                className="font-display mt-4 block text-[clamp(1.5rem,4vw,2.5rem)] font-semibold tracking-tight text-foreground transition-opacity hover:opacity-70"
+              <MailtoCopyLink
+                href={mailtoHref}
+                wrapperClassName="mt-4 w-full"
+                className="font-display block w-full text-[clamp(1.5rem,4vw,2.5rem)] font-semibold tracking-tight text-foreground transition-opacity hover:opacity-70"
               >
                 {tiktokProfile.businessEmail}
-              </a>
+              </MailtoCopyLink>
             </div>
           </div>
         </FadeIn>
 
-        <FadeIn delay={0.08}>
+        <FadeIn>
           <div className="flex h-full flex-col justify-between gap-10 lg:items-end lg:text-right">
             <div className="flex flex-wrap items-center gap-x-8 gap-y-4 lg:justify-end">
               <WorkWithMeButton

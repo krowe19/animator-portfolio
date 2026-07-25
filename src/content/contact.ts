@@ -1,7 +1,7 @@
 export const contact = {
   heading: "Work With Me",
   intro:
-    "Brand partnerships and promotional 3D for gru vlogs. Reach out for commissions, campaigns, and collabs.",
+    "I'd love to work with you. I deliver high-quality, guaranteed viral posts and custom promotional content. Reach out for commissions, campaigns, and collabs. Very quick communication with businesses and encourage any and all types of arrangements. Hit me up today!",
   emailLabel: "Business email",
   channelsHeading: "Find gru vlogs",
 } as const;

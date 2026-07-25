@@ -12,8 +12,10 @@ export const site = {
   name: "Kane Rowe",
   brand: "gru vlogs",
   title: "3D Animator",
-  tagline:
-    "Short-form 3D character comedy that brands hire. 1.8M followers, 257M+ views, and work with Sony Music, Atlantic, and Block Blast.",
+  tagline: [
+    "Short-form 3D viral machine.",
+    "1.8M followers, 257M+ views, and work with Sony Music, Atlantic, and Block Blast.",
+  ],
   nav: [
     { label: "Work", href: "#work" },
     { label: "TikTok", href: "#tiktok" },

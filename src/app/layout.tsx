@@ -1,7 +1,9 @@
 import type { Metadata } from "next";
 import { Instrument_Sans, Syne } from "next/font/google";
 import { MotionProvider } from "@/components/motion/MotionProvider";
+import { SmoothScroll } from "@/components/motion/SmoothScroll";
 import { site } from "@/content/site";
+import "lenis/dist/lenis.css";
 import "./globals.css";
 
 const instrument = Instrument_Sans({
@@ -17,7 +19,7 @@ const syne = Syne({
 
 export const metadata: Metadata = {
   title: `${site.brand} · ${site.name}`,
-  description: site.tagline,
+  description: site.tagline.join(" "),
 };
 
 export default function RootLayout({
@@ -34,7 +36,9 @@ export default function RootLayout({
         <a href="#main-content" className="skip-link">
           Skip to content
         </a>
-        <MotionProvider>{children}</MotionProvider>
+        <MotionProvider>
+          <SmoothScroll>{children}</SmoothScroll>
+        </MotionProvider>
       </body>
     </html>
   );
