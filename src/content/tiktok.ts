@@ -44,7 +44,7 @@ export const tiktokProfile = {
       category: "Mobile Game",
       logoUrl: "/partners/block-blast.svg",
     },
-  ] satisfies BrandPartnership[],
+  ] as BrandPartnership[],
   /** Stats pulled from @grugaming69 on 29 Jun 2025 */
   stats: {
     followers: 1_800_000,
