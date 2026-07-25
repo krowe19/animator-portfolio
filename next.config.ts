@@ -9,6 +9,8 @@ const nextConfig: NextConfig = {
     NEXT_PUBLIC_BASE_PATH: basePath,
   },
   images: {
+    // Safari refuses optimized images served as Content-Disposition: attachment.
+    contentDispositionType: "inline",
     remotePatterns: [
       {
         protocol: "https",

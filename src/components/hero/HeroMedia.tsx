@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { heroLqip } from "@/content/hero-lqip";
 import { cn } from "@/lib/utils";
 
 type HeroMediaProps = {
@@ -8,15 +9,17 @@ type HeroMediaProps = {
 
 export function HeroMedia({ mode, className }: HeroMediaProps) {
   return (
-    <div className={cn("relative h-full w-full overflow-hidden", className)}>
+    <div className={cn("relative h-full w-full overflow-hidden bg-hero-bg", className)}>
       <Image
-        src="/hero/gru-silhouette.png"
+        src="/hero/gru-silhouette.webp"
         alt="3D render of Gru in profile, noir lighting"
         fill
         priority
         fetchPriority="high"
-        // Serve the static PNG directly — Next's optimizer can return
-        // Content-Disposition: attachment, which Safari refuses to show inline.
+        placeholder="blur"
+        blurDataURL={heroLqip}
+        // Static WebP — skip the optimizer so Safari gets a normal inline image
+        // (and we control the bytes precisely for the LCP preload).
         unoptimized
         sizes={
           mode === "landscape"

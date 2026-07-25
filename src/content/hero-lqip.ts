@@ -1,0 +1,1 @@
+export const heroLqip = "data:image/webp;base64,UklGRoIAAABXRUJQVlA4IHYAAAAwBACdASoYABAAPu1iqU2ppaOiMAgBMB2JaQAAUyzJmh3TwkLPASQGLGgA/vOCAAfvwSsfHTIpGZ0cdtxicvcS+e6Ve37u+8wLaz30SGQk1OZwevsDhWr61WYGQPO3cSGpxHSfdUeDA6nIPO79A/khSixcAAAA";
