@@ -25,7 +25,7 @@ const [top, ...rest] = tiktokProfile.topVideos;
 export const monograph = {
   kicker: "A monograph of short films",
   intro:
-    "Written, lit and animated by hand by Kane Rowe. Two hundred and fifty-seven million views, and counting.",
+    "Written, produced and animated by hand by Kane Rowe. Two hundred and fifty-seven million views, and counting.",
   email: "contact@gruvlogs.com",
   leadPlate: {
     label: "Plate I",
@@ -67,7 +67,7 @@ export const monograph = {
   credits: [
     { name: "Sony Music", href: "https://www.sonymusic.com" },
     { name: "Atlantic Records", href: "https://www.atlanticrecords.com" },
-    { name: "Alamo Records", href: "https://open.spotify.com/search/Alamo%20Records" },
+    { name: "Alamo Records", href: "https://www.alamo-records.com" },
     { name: "GloRilla", href: "https://open.spotify.com/search/GloRilla" },
     { name: "Moneybagg Yo", href: "https://open.spotify.com/search/Moneybagg%20Yo" },
     { name: "BossMan Dlow", href: "https://open.spotify.com/search/BossMan%20Dlow" },

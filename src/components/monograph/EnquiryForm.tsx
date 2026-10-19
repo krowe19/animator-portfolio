@@ -40,7 +40,7 @@ export function EnquiryForm() {
         <input name="email" type="email" autoComplete="email" required />
       </label>
       <label>
-        The brief
+        Brief
         <textarea name="brief" rows={3} required />
       </label>
       <button type="submit">
