@@ -1,5 +1,6 @@
 import Image from "next/image";
 import { EnquiryForm } from "@/components/monograph/EnquiryForm";
+import { RateList } from "@/components/monograph/RateList";
 import { monograph, type Plate } from "@/content/monograph";
 import { site } from "@/content/site";
 import { withBasePath } from "@/lib/utils";
@@ -130,14 +131,7 @@ export default function Home() {
                 </div>
               ))}
             </div>
-            <div className="mono-rates">
-              {monograph.rates.map((rate) => (
-                <div key={rate.label}>
-                  <span>{rate.label}</span>
-                  <span>{rate.price}</span>
-                </div>
-              ))}
-            </div>
+            <RateList rates={monograph.rates} />
           </div>
         </section>
 

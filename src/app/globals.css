@@ -356,18 +356,39 @@ body {
   border-bottom: 1px solid var(--night-rule);
 }
 
-.mono-rates > div {
+.mono-rates > a {
   display: flex;
   justify-content: space-between;
   align-items: baseline;
   gap: 16px;
   padding: 20px 0;
   border-top: 1px solid var(--night-rule);
+  color: var(--paper);
+  text-decoration: none;
+  transition: color 0.3s ease;
 }
 
-.mono-rates span:last-child {
+.mono-rates > a > span:last-child {
   font-family: var(--serif);
   font-size: 22px;
+}
+
+.mono-rate-arrow {
+  display: inline-block;
+  font-family: var(--sans);
+  opacity: 0.35;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.mono-rates > a:hover,
+.mono-rates > a:focus-visible {
+  color: #f0a93e;
+}
+
+.mono-rates > a:hover .mono-rate-arrow,
+.mono-rates > a:focus-visible .mono-rate-arrow {
+  opacity: 1;
+  transform: translateX(3px);
 }
 
 .mono-enquire {
