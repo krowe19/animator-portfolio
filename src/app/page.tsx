@@ -1,5 +1,6 @@
 import Image from "next/image";
 import { EnquiryForm } from "@/components/monograph/EnquiryForm";
+import { LinkIcon } from "@/components/monograph/LinkIcon";
 import { RateList } from "@/components/monograph/RateList";
 import { monograph, type Plate } from "@/content/monograph";
 import { site } from "@/content/site";
@@ -117,9 +118,7 @@ export default function Home() {
                   style={{ "--gem": GEMS[index % GEMS.length] } as React.CSSProperties}
                 >
                   <span>{credit.name}</span>
-                  <span className="mono-credit-arrow" aria-hidden="true">
-                    ↗
-                  </span>
+                  <LinkIcon className="mono-credit-arrow" />
                 </a>
               ))}
             </div>

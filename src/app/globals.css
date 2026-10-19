@@ -374,8 +374,8 @@ body {
 }
 
 .mono-rate-arrow {
-  display: inline-block;
-  font-family: var(--sans);
+  margin-left: 10px;
+  vertical-align: -0.05em;
   opacity: 0.35;
   transition: opacity 0.3s ease, transform 0.3s ease;
 }
@@ -388,7 +388,7 @@ body {
 .mono-rates > a:hover .mono-rate-arrow,
 .mono-rates > a:focus-visible .mono-rate-arrow {
   opacity: 1;
-  transform: translateX(3px);
+  transform: translate(2px, -2px);
 }
 
 .mono-enquire {

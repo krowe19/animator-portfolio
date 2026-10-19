@@ -1,5 +1,6 @@
 "use client";
 
+import { LinkIcon } from "@/components/monograph/LinkIcon";
 import type { Rate } from "@/content/monograph";
 
 export const ENQUIRE_EVENT = "mono:enquire";
@@ -21,9 +22,7 @@ export function RateList({ rates }: { rates: readonly Rate[] }) {
           <span>{rate.label}</span>
           <span>
             {rate.price}
-            <span className="mono-rate-arrow" aria-hidden="true">
-              &nbsp;→
-            </span>
+            <LinkIcon className="mono-rate-arrow" />
           </span>
         </a>
       ))}
