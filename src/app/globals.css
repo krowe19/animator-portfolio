@@ -374,6 +374,7 @@ body {
 }
 
 .mono-rate-arrow {
+  display: inline-block;
   margin-left: 10px;
   vertical-align: -0.05em;
   opacity: 0.35;
