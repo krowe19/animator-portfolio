@@ -1,28 +1,30 @@
 import type { Metadata } from "next";
-import { Instrument_Sans, Syne } from "next/font/google";
+import { Albert_Sans, Bodoni_Moda } from "next/font/google";
 import { MotionProvider } from "@/components/motion/MotionProvider";
 import { SmoothScroll } from "@/components/motion/SmoothScroll";
+import { monograph } from "@/content/monograph";
 import { site } from "@/content/site";
-import { withBasePath } from "@/lib/utils";
 import "lenis/dist/lenis.css";
 import "./globals.css";
 
-const instrument = Instrument_Sans({
-  variable: "--font-instrument",
+const albert = Albert_Sans({
+  variable: "--font-albert",
   subsets: ["latin"],
+  weight: ["400", "500", "600"],
   display: "swap",
 });
 
-const syne = Syne({
-  variable: "--font-syne",
+const bodoni = Bodoni_Moda({
+  variable: "--font-bodoni",
   subsets: ["latin"],
-  weight: ["500", "600", "700", "800"],
+  style: ["normal", "italic"],
+  axes: ["opsz"],
   display: "swap",
 });
 
 export const metadata: Metadata = {
   title: `${site.brand} · ${site.name}`,
-  description: site.tagline.join(" "),
+  description: monograph.intro,
 };
 
 export default function RootLayout({
@@ -31,21 +33,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html
-      lang="en"
-      className={`${instrument.variable} ${syne.variable} h-full antialiased`}
-    >
-      <head>
-        {/* Kick off LCP hero fetch before JS/CSS finish — critical on mobile. */}
-        <link
-          rel="preload"
-          as="image"
-          href={withBasePath("/hero/gru-silhouette.webp")}
-          type="image/webp"
-          fetchPriority="high"
-        />
-      </head>
-      <body className="min-h-full bg-background font-sans text-foreground">
+    <html lang="en" className={`${albert.variable} ${bodoni.variable} h-full antialiased`}>
+      <body className="min-h-full">
         <a href="#main-content" className="skip-link">
           Skip to content
         </a>
