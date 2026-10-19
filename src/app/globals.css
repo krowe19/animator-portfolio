@@ -385,6 +385,7 @@ body {
 
 .mono-enquire > p a {
   color: var(--ink);
+  text-underline-offset: 4px;
 }
 
 .mono-form {
