@@ -84,7 +84,7 @@ export const monograph = {
     { value: "4M", label: "Block Blast, one product integration" },
   ],
   rates: [
-    { label: "Sound promotion", price: "from £1,200" },
+    { label: "Sound promotion", price: "from £900" },
     { label: "Brand integration", price: "from £4,000" },
     { label: "Campaign of three", price: "from £10,500" },
   ] satisfies Rate[],
