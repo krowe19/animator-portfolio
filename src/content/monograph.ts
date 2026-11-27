@@ -72,6 +72,7 @@ export const monograph = {
     { name: "Moneybagg Yo", href: "https://open.spotify.com/search/Moneybagg%20Yo" },
     { name: "BossMan Dlow", href: "https://open.spotify.com/search/BossMan%20Dlow" },
     { name: "bbno$", href: "https://open.spotify.com/search/bbno%24" },
+    { name: "Zero Day Records", href: "https://zerodayrecords.com" },
     { name: "Odetari", href: "https://open.spotify.com/search/Odetari" },
     { name: "9lives", href: "https://open.spotify.com/search/9lives" },
     { name: "Block Blast", href: "https://www.blockblast.com/" },
