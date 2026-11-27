@@ -20,7 +20,7 @@ export const tiktokProfile = {
   displayName: "gru vlogs",
   url: "https://www.tiktok.com/@grugaming69",
   bio: "Where are the gorls?",
-  businessEmail: "gruvlogs@proton.me",
+  businessEmail: "contact@gruvlogs.com",
   linktree: "https://linktr.ee/grugaming69",
   brandInquirySubject: "Brand Partnership: gru vlogs",
   story: [

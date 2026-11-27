@@ -25,7 +25,7 @@ const [top, ...rest] = tiktokProfile.topVideos;
 export const monograph = {
   kicker: "A monograph of short films",
   intro:
-    "Written, lit and animated by hand by Kane Rowe. Two hundred and fifty-seven million views, and counting.",
+    "Written, produced and animated by hand by Kane Rowe. Two hundred and fifty-seven million views, and counting.",
   email: "contact@gruvlogs.com",
   leadPlate: {
     label: "Plate I",
@@ -67,11 +67,12 @@ export const monograph = {
   credits: [
     { name: "Sony Music", href: "https://www.sonymusic.com" },
     { name: "Atlantic Records", href: "https://www.atlanticrecords.com" },
-    { name: "Alamo Records", href: "https://open.spotify.com/search/Alamo%20Records" },
+    { name: "Alamo Records", href: "https://www.alamo-records.com" },
     { name: "GloRilla", href: "https://open.spotify.com/search/GloRilla" },
     { name: "Moneybagg Yo", href: "https://open.spotify.com/search/Moneybagg%20Yo" },
     { name: "BossMan Dlow", href: "https://open.spotify.com/search/BossMan%20Dlow" },
     { name: "bbno$", href: "https://open.spotify.com/search/bbno%24" },
+    { name: "Zero Day Records", href: "https://zerodayrecords.com" },
     { name: "Odetari", href: "https://open.spotify.com/search/Odetari" },
     { name: "9lives", href: "https://open.spotify.com/search/9lives" },
     { name: "Block Blast", href: "https://www.blockblast.com/" },
@@ -83,8 +84,8 @@ export const monograph = {
     { value: "4M", label: "Block Blast, one product integration" },
   ],
   rates: [
-    { label: "Sound promotion", price: "from £1,200" },
-    { label: "Brand film", price: "from £4,000" },
-    { label: "Series of three", price: "from £10,500" },
+    { label: "Sound promotion", price: "from £900" },
+    { label: "Brand integration", price: "from £4,000" },
+    { label: "Campaign of three", price: "from £10,500" },
   ] satisfies Rate[],
 } as const;

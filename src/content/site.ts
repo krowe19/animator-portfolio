@@ -24,11 +24,11 @@ export const site = {
   socials: [
     { label: "TikTok", href: "https://www.tiktok.com/@grugaming69" },
     { label: "Linktree", href: "https://linktr.ee/grugaming69" },
-    { label: "Email", href: "mailto:gruvlogs@proton.me" },
+    { label: "Email", href: "mailto:contact@gruvlogs.com" },
   ] satisfies SocialLink[],
   cta: {
     label: "Work With Me",
-    href: "mailto:gruvlogs@proton.me?subject=Brand%20Partnership%3A%20gru%20vlogs",
+    href: "mailto:contact@gruvlogs.com?subject=Brand%20Partnership%3A%20gru%20vlogs",
   },
   secondaryCta: {
     label: "Watch on TikTok",

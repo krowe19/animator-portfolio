@@ -1,10 +1,23 @@
 "use client";
 
-import type { FormEvent } from "react";
+import { useEffect, useRef, type FormEvent } from "react";
+import { ENQUIRE_EVENT } from "@/components/monograph/RateList";
 import { monograph } from "@/content/monograph";
 
 /** No backend: the form opens the visitor's mail app with the brief filled in. */
 export function EnquiryForm() {
+  const briefRef = useRef<HTMLTextAreaElement>(null);
+
+  useEffect(() => {
+    function prefill(event: Event) {
+      const brief = briefRef.current;
+      if (!brief) return;
+      brief.value = `I'm interested in ${(event as CustomEvent<string>).detail}. `;
+    }
+    window.addEventListener(ENQUIRE_EVENT, prefill);
+    return () => window.removeEventListener(ENQUIRE_EVENT, prefill);
+  }, []);
+
   function handleSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
     const data = new FormData(event.currentTarget);
@@ -40,8 +53,8 @@ export function EnquiryForm() {
         <input name="email" type="email" autoComplete="email" required />
       </label>
       <label>
-        The brief
-        <textarea name="brief" rows={3} required />
+        Brief
+        <textarea ref={briefRef} name="brief" rows={3} required />
       </label>
       <button type="submit">
         Send enquiry<span aria-hidden="true">&nbsp;&nbsp;→</span>
